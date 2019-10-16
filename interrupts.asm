@@ -8,3 +8,7 @@ SECTION "serial",ROM0[$58]
     reti
 SECTION "joypad",ROM0[$60]
     reti
+SECTION "Interrupt Handlers", ROM0[$200]
+VBlank::
+    reti
+

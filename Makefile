@@ -8,7 +8,7 @@ all: gopher.gb
 
 gopher.gb: $(OBJECTS)
 	rgblink -n gopher.sym -m gopher.map -o $@ $<
-	rgbfix -jv -i XXXX -k XX -l 0x33 -m 0x01 -p 0 -r 0 -t gopher $@
+	rgbfix -jv -k MR -l 0x33 -m 0x01 -p 0 -r 0 -t gopher $@
 
 clean:
 	rm -f *.o gopher.gb gopher.sym gopher.map

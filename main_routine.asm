@@ -1,4 +1,4 @@
-SECTION "Main Routine", ROM0
+SECTION "Main Routine", ROM0[$150]
 Start::
 .loop
     halt
