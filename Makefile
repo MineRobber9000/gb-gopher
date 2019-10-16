@@ -4,7 +4,7 @@ OBJECTS:=$(patsubst %.asm,%.o,$(SOURCES))
 all: gopher.gb
 
 %.o: %.asm
-	rgbasm -o $@ $<
+	rgbasm -E -o $@ $<
 
 gopher.gb: $(OBJECTS)
 	rgblink -n gopher.sym -m gopher.map -o $@ $<
