@@ -1,3 +1,3 @@
-VBlank:
+VBlank::
     reti
 
