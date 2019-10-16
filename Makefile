@@ -1,4 +1,4 @@
-SOURCES:=main.asm
+SOURCES:=$(wildcard *.asm)
 OBJECTS:=$(patsubst %.asm,%.o,$(SOURCES))
 
 all: gopher.gb
