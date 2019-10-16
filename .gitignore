@@ -1,0 +1,4 @@
+*.o
+gopher.gb
+gopher.map
+gopher.sym
