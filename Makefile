@@ -1,11 +1,14 @@
-all: game.gb
+SOURCES:=$(wildcard *.asm)
+OBJECTS:=$(patsubst %.asm,%.o,$(SOURCES))
 
-game.o: game.asm
-	rgbasm -o game.o game.asm
+all: gopher.gb
 
-game.gb: game.o
-	rgblink -n game.sym -m $*.map -o $@ $<
-	rgbfix -jv -i XXXX -k XX -l 0x33 -m 0x01 -p 0 -r 0 -t game $@
+%.o: %.asm
+	rgbasm -o $@ $<
+
+gopher.gb: $(OBJECTS)
+	rgblink -n gopher.sym -m gopher.map -o $@ $<
+	rgbfix -jv -i XXXX -k XX -l 0x33 -m 0x01 -p 0 -r 0 -t gopher $@
 
 clean:
-	rm -f game.o game.gb
+	rm -f *.o gopher.gb gopher.sym gopher.map
